@@ -1,0 +1,31 @@
+{
+  "users": [],
+  "fighters": [
+    {
+      "id": "75ab0344-eed8-4c95-b423-8dae5d06703d",
+      "name": "Conor McNuggets",
+      "country": "Ireland",
+      "height": "40",
+      "weight": "5"
+    },
+    {
+      "id": "2e2742ee-295d-4baf-8df8-3f66045f1a72",
+      "name": "Cocot St-Pierre",
+      "country": "Canada",
+      "height": "50",
+      "weight": "4.5"
+    }
+  ],
+  "fights": [
+    {
+      "id": "803cabc8-d05a-4a64-9e4e-9dd39dd61092",
+      "place": "New york",
+      "date": "10/10/2019",
+      "fighters": [
+        "75ab0344-eed8-4c95-b423-8dae5d06703d",
+        "2e2742ee-295d-4baf-8df8-3f66045f1a72"
+      ],
+      "winner": "75ab0344-eed8-4c95-b423-8dae5d06703d"
+    }
+  ]
+}
