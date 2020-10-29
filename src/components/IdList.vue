@@ -1,58 +1,55 @@
 <template>
   <div>
-    <button @click="sortCard"> Sort card </button>
-    <IdCard
-      v-for="item in items"
-      :key="item.age"
-      :data="item"
-    />
+    <h1>{{ title }}</h1>
+    <div v-if="loaded">
+      <div
+        v-for="item in items"
+        :key="item.name">
+        <p v-for="(label, key) in mapping" :key="key">
+          {{ `${label}: ${item[key]}` }}
+        </p>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import IdCard from '@/components/IdCard.vue'
+import axios from 'axios'
 
 export default {
-  components: {
-    IdCard,
-  },
   data () {
     return {
-      items: [
-        {
-          firstname: "Michael",
-          lastname: 'Jordan',
-          age: 56,
-          avatar: 'https://via.placeholder.com/150',
-        },
-        {
-          firstname: "Kevin",
-          lastname: 'Durand',
-          age: 35,
-          avatar: 'https://via.placeholder.com/150',
-        },
-        {
-          firstname: "Scottie",
-          lastname: 'Pippen',
-          age: 52,
-          avatar: 'https://via.placeholder.com/150',
-        }
-      ],
-      sorted: false,
+      items: [],
+      loaded: false,
+      error: null,
     }
   },
+  props: {
+    mapping: Object,
+    endpoint: String,
+    title: String,
+  },
+  created () {
+    this.fetch()
+  },
   methods: {
-    sortCard () {
-      if (!this.sorted) {
-        this.items = this.items.sort((a, b) => {
-          return a.age > b.age
+    fetch () {
+      this.loaded = false
+      axios.get(`https://swapi.dev/api/${this.endpoint}`)
+        .then(res => {
+          this.items = res.data.results
+          this.loaded = true
         })
-        this.sorted = true
-      } else {
-        this.items = this.items.reverse()
-        this.sorted = false
-      }
+        .catch(er => {
+          this.error = er.response.status
+          this.loaded = true
+        })
     }
-  }
+  },
+  watch: {
+    '$route' (to, from) {
+      this.fetch()
+    }
+  },
 }
 </script>
