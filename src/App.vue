@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <HelloWorld msg="hello world !" />
+    <HelloWorld msg="NBA MVP" />
   </div>
 </template>
 
