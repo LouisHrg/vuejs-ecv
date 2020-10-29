@@ -1,45 +1,39 @@
 <template>
   <div>
-    <h1>{{ msg }}</h1>
-    <div
-      v-for="player in players"
-      :key="player.lastname"
-    >
-      <Player
-        :firstname="player.firstname"
-        :lastname="player.lastname"
-        :age="player.age"
-      />
-    </div>
+    <IdCard
+      v-for="item in items"
+      :key="item.birthdate"
+      :data="item"
+    />
   </div>
 </template>
 
 <script>
-import Player from '@/components/Player.vue'
+import IdCard from '@/components/IdCard.vue'
 
 export default {
   name: 'HelloWorld',
   components: {
-    Player
-  },
-  props: {
-    msg: String
+    IdCard,
   },
   data () {
     return {
-      players: [
+      items: [
         {
-          firstname: 'Michael',
+          firstname: "Michael",
           lastname: 'Jordan',
-          age: 55
+          birthdate: '20/11/1970',
+          avatar: 'https://commons.wikimedia.org/wiki/File:Placeholder_no_text.svg',
         },
         {
-          firstname: 'Kevin',
+          firstname: "Kevin",
           lastname: 'Durand',
-          age: 35
+          birthdate: '11/03/1985',
+          avatar: 'https://commons.wikimedia.org/wiki/File:Placeholder_no_text.svg',
         }
       ]
     }
   }
 }
 </script>
+
