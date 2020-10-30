@@ -1,10 +1,8 @@
 import Router from 'vue-router'
 import Vue from 'vue'
-import IdList from '@/components/IdList'
-import Login from '@/components/Login'
-import TestStore from '@/components/TestStore'
-import Register from '@/components/Register'
 import userApi from '@/api/users'
+import newsRoutes from '@/router/news'
+import Main from '@/layouts/Main'
 
 Vue.use(Router)
 
@@ -13,37 +11,12 @@ const router = new Router({
   base: '/',
   routes: [
     {
-      component: TestStore,
-      path: '/test',
-      name: 'test'
-    },
-    {
-      component: Login,
-      path: '/login',
-      name: 'login'
-    },
-    {
-      component: Register,
-      path: '/register',
-      name: 'register'
-    },
-    {
-      component: IdList,
-      path: '/',
-      name: 'people',
-      meta: {
-        auth: true
-      },
-      props: {
-        title: 'People',
-        endpoint: 'people',
-        mapping: {
-          birth_year: 'Date de naissance',
-          name: 'Nom',
-          height: 'Taille'
-        }
-      }
-    },
+      component: Main,
+      path: '',
+      children: [
+        ...newsRoutes
+      ]
+    }
   ]
 })
 
