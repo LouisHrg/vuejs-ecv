@@ -28,6 +28,19 @@ const actions = {
     const { data } = await axios.get(`http://localhost:3000/news/${id}`)
     commit('setNews', data)
   },
+  async createNews ({ commit }, data) {
+    await axios.post(`http://localhost:3000/news`, {
+      ...data
+    })
+  },
+  async editNews ({ commit }, data) {
+    await axios.patch(`http://localhost:3000/news/${data.id}`, {
+      ...data
+    })
+  },
+  async deleteNews ({ commit }, id) {
+    await axios.delete(`http://localhost:3000/news/${id}`)
+  },
 }
 
 export default {

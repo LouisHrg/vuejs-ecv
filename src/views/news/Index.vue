@@ -1,12 +1,17 @@
 <template>
   <div>
-    <router-link
+    <ul>
+      <li
       v-for="item in news"
       :key="item.id"
+      >
+    <router-link
       :to="{name: 'news.show', params: {id: item.id}}"
     >
     {{ item.title }}
     </router-link>
+    </li>
+    </ul>
   </div>
 </template>
 

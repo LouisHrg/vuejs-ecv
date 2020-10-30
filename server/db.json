@@ -6,16 +6,5 @@
       "id": 1
     }
   ],
-  "news": [
-    {
-      "id": 1,
-      "title": "Ma super news",
-      "content": "Salut à tous"
-    },
-    {
-      "id": 2,
-      "title": "Ma super news 2",
-      "content": "Salut à tous 2"
-    }
-  ]
+  "news": []
 }
