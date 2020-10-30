@@ -2,6 +2,7 @@ import Router from 'vue-router'
 import Vue from 'vue'
 import IdList from '@/components/IdList'
 import Login from '@/components/Login'
+import TestStore from '@/components/TestStore'
 import Register from '@/components/Register'
 import userApi from '@/api/users'
 
@@ -11,6 +12,11 @@ const router = new Router({
   mode: 'history',
   base: '/',
   routes: [
+    {
+      component: TestStore,
+      path: '/test',
+      name: 'test'
+    },
     {
       component: Login,
       path: '/login',
