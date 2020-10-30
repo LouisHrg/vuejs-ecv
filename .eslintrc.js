@@ -20,5 +20,6 @@ module.exports = {
     'comma-dangle': 0,
     'lines-between-class-members': 0,
     'no-multiple-empty-lines': 0,
+    'camelcase': 0
   }
 }

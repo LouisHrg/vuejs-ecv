@@ -1,20 +1,27 @@
 <template>
   <div>
     <router-link
-      :to="{name: 'vehicles'}"
+      :to="{name: 'login'}"
     >
-      Vehicles
+      Login
     </router-link>
     <router-link
-      :to="{name: 'people'}"
+      :to="{name: 'register'}"
     >
-      People
+      Register
     </router-link>
-    <router-link
-      :to="{name: 'starships'}"
-    >
-      Starships
-    </router-link>
+    <button @click="logout"> Logout </button>
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    logout () {
+      localStorage.removeItem('token')
+      this.$router.push({ name: 'login' })
+    }
+  }
+}
+</script>
 

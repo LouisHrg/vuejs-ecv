@@ -1,5 +1,21 @@
 {
-  "users": [],
+  "users": [
+    {
+      "email": "toto@example.com",
+      "password": "$2a$10$dXNszRnkYBxyRPwYHgIfxeOD0/IBDbkI2aXpj1qXrMwvoVKPXa1Vq",
+      "id": 1
+    },
+    {
+      "email": "toto@gmail.com",
+      "password": "$2a$10$U4qmeCn8fP1npr0BsHHJr.vxsX0eAsfPcTkf0u7S8ZlvKkkr.rxDK",
+      "id": 2
+    },
+    {
+      "email": "qzddqz@gmail.com",
+      "password": "$2a$10$pHD8lpoYzbxgy368fGtWMeIWHr291l8u8sbfkBi6xyfeH7LIdl9YC",
+      "id": 3
+    }
+  ],
   "fighters": [
     {
       "id": "75ab0344-eed8-4c95-b423-8dae5d06703d",

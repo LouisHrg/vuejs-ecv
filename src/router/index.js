@@ -1,6 +1,9 @@
 import Router from 'vue-router'
 import Vue from 'vue'
 import IdList from '@/components/IdList'
+import Login from '@/components/Login'
+import Register from '@/components/Register'
+import userApi from '@/api/users'
 
 Vue.use(Router)
 
@@ -9,9 +12,22 @@ const router = new Router({
   base: '/',
   routes: [
     {
+      component: Login,
+      path: '/login',
+      name: 'login'
+    },
+    {
+      component: Register,
+      path: '/register',
+      name: 'register'
+    },
+    {
       component: IdList,
       path: '/',
       name: 'people',
+      meta: {
+        auth: true
+      },
       props: {
         title: 'People',
         endpoint: 'people',
@@ -22,35 +38,21 @@ const router = new Router({
         }
       }
     },
-    {
-      component: IdList,
-      path: '/starships',
-      name: 'starships',
-      props: {
-        title: 'Starships',
-        endpoint: 'starships',
-        mapping: {
-          cost_in_credits: 'Prix',
-          name: 'Nom',
-          passengers: 'Nb de passagers'
-        }
-      }
-    },
-    {
-      component: IdList,
-      path: '/vehicles',
-      name: 'vehicles',
-      props: {
-        title: 'Vehicles',
-        endpoint: 'vehicles',
-        mapping: {
-          cost_in_credits: 'Prix',
-          name: 'Nom',
-          passengers: 'Nb de passagers'
-        }
-      }
-    },
   ]
+})
+
+router.beforeEach(async (to, from, next) => {
+  if (to.matched.some(route => route.meta.auth)) {
+    try {
+      await userApi.verifyUser()
+      return next()
+    } catch (e) {
+      localStorage.removeItem('token')
+      return next('/login')
+    }
+  } else {
+    return next()
+  }
 })
 
 export default router
