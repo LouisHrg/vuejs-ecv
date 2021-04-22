@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "server": "json-server server/db.json -m ./node_modules/json-server-auth -r server/routes.json"
+    "server": "json-server  server/db.json -m ./node_modules/json-server-auth -r server/routes.json"
   },
   "dependencies": {
     "axios": "^0.21.0",
