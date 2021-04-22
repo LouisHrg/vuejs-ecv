@@ -4,6 +4,50 @@
       "email": "toto@example.com",
       "password": "$2a$10$dXNszRnkYBxyRPwYHgIfxeOD0/IBDbkI2aXpj1qXrMwvoVKPXa1Vq",
       "id": 1
+    },
+    {
+      "email": "louis@narah.io",
+      "password": "$2a$10$v0jkOi/aWgRCqy8CyQ7GU.MMBDXE2HWZtIByR9glCw9SfMV5vp2kq",
+      "role": "admin",
+      "id": 2
+    },
+    {
+      "email": "admin@gmail.com",
+      "password": "$2a$10$FEzQOpyzd6sNxBU05NaWOuKuwu2ZxFeB3n0iLVwON7AwsACBgwn.S",
+      "id": 3
+    },
+    {
+      "email": "toto@gmail.com",
+      "password": "$2a$10$e/W.8lOkX9mwydK.XcDJOu8f2mv5MWlI4rISDJ0DqPRVufnoNU5va",
+      "firstname": "louis",
+      "lastname": "harang",
+      "id": 4
+    },
+    {
+      "email": "qzdqzzqd@gmail.com",
+      "password": "$2a$10$jyxLSUpYvndAQZ.AONsvxujCVFwnA/Mu3CUP1WCJ2p2PsA5J20XXW",
+      "firstname": "qdqzdzq",
+      "lastname": "qzdzdq",
+      "id": 5
+    },
+    {
+      "email": "qdqzdqzd@gmail.com",
+      "password": "$2a$10$pF1M3TQqME.vwcDorQWNIujtG31yx6ZpwExZ5uR0i.3ogfIwA35ua",
+      "firstname": "qdqzdq",
+      "lastname": "qzdqzd",
+      "id": 6
+    },
+    {
+      "email": "qzdqqz@gmail.com",
+      "password": "$2a$10$DKFeGxRnahYPul1GoKQslOHywSZq3ywtcV54VQazgSZUt5jgQ0mMa",
+      "firstname": "qzdqzd",
+      "lastname": "qzdzq",
+      "id": 7
+    },
+    {
+      "email": "admin2@gmail.com",
+      "password": "$2a$10$v4vUb8M0Igq4Xm/aX.RALOAv.BN0v3NIfp.SiDngdyLqIEnWC8AYK",
+      "id": 8
     }
   ],
   "news": [
@@ -14,14 +58,38 @@
     }
   ],
   "genres": [
-    { "id": 1, "name": "rock" },
-    { "id": 2, "name": "metal" },
-    { "id": 3, "name": "rap" },
-    { "id": 4, "name": "classical" },
-    { "id": 5, "name": "electro" },
-    { "id": 6, "name": "rnb" },
-    { "id": 7, "name": "alternative" },
-    { "id": 8, "name": "jazz" }
+    {
+      "id": 1,
+      "name": "rock"
+    },
+    {
+      "id": 2,
+      "name": "metal"
+    },
+    {
+      "id": 3,
+      "name": "rap"
+    },
+    {
+      "id": 4,
+      "name": "classical"
+    },
+    {
+      "id": 5,
+      "name": "electro"
+    },
+    {
+      "id": 6,
+      "name": "rnb"
+    },
+    {
+      "id": 7,
+      "name": "alternative"
+    },
+    {
+      "id": 8,
+      "name": "jazz"
+    }
   ],
   "artists": [
     {
